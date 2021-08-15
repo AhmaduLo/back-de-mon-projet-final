@@ -1,6 +1,6 @@
 package com.example.shambles.posterDto;
 
-
+import com.example.shambles.model.User;
 
 public class PosterDto {
 	private Long id;
@@ -8,7 +8,17 @@ public class PosterDto {
 	private String description;
 	private boolean isLike=false;
 	
+	private User user;
+	
+	
+	
 
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public boolean isLike() {
 		return isLike;
 	}

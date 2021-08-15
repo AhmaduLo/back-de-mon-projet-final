@@ -2,7 +2,7 @@ package com.example.shambles.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,9 +28,10 @@ public class Poster {
 	
 	//-------------------------------------------------
 
-//	@ManyToOne( cascade = CascadeType.ALL )
+//	@ManyToOne( cascade = CascadeType.ALL,fetch = FetchType.EAGER )
 //	@JoinColumn(name = "idUser")
 //	private User User;
+	
 	
 //-----------------------------------------------------	
 
@@ -38,6 +39,12 @@ public class Poster {
 	
 	
 
+//	public User getUser() {
+//		return User;
+//	}
+//	public void setUser(User user) {
+//		User = user;
+//	}
 	public boolean isLike() {
 		return isLike;
 	}

@@ -45,6 +45,21 @@ public class User {
 	public void setPoster(Set<Poster> poster) {
 		this.poster = poster;
 	}
+	//-----------------------------------------------------------
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	Set<Texte>textes;
+	
+	
+	
+	
+	public Set<Texte> getTextes() {
+		return textes;
+	}
+
+	public void setTextes(Set<Texte> textes) {
+		this.textes = textes;
+	}
+	//----------------------------------------------------------
 
 	public User() {
 	}
