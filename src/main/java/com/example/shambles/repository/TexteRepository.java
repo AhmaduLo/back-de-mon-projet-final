@@ -12,3 +12,5 @@ import com.example.shambles.model.Texte;
 public interface TexteRepository  extends JpaRepository<Texte, Long> {
 	public List<Texte> findAllByOrderByIdDesc();
 }
+
+//select * from texte order by Id Desc 

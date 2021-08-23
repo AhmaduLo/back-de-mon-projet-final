@@ -35,23 +35,23 @@ public class User {
 	private Set<Role> roles = new HashSet<>();
 
 	// ---------------------------------------------------------------------------
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	Set<Poster> poster;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
+	Set<Poster> posters;
 
-	public Set<Poster> getPoster() {
-		return poster;
+	
+
+	public Set<Poster> getPosters() {
+		return posters;
 	}
 
-	public void setPoster(Set<Poster> poster) {
-		this.poster = poster;
+	public void setPosters(Set<Poster> posters) {
+		this.posters = posters;
 	}
-	//-----------------------------------------------------------
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	Set<Texte>textes;
-	
-	
-	
-	
+
+	// -----------------------------------------------------------
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
+	Set<Texte> textes;
+
 	public Set<Texte> getTextes() {
 		return textes;
 	}
@@ -59,7 +59,7 @@ public class User {
 	public void setTextes(Set<Texte> textes) {
 		this.textes = textes;
 	}
-	//----------------------------------------------------------
+	// ----------------------------------------------------------
 
 	public User() {
 	}

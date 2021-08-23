@@ -43,7 +43,8 @@ public class PosterService {
 		User user = null;
 		if (userOptional.isPresent()) {
 			user = userOptional.get();
-			user.getPoster().add(poster);
+			poster.setUser(user);
+			user.getPosters().add(poster);
 			return userRepository.save(user);
 		}
 		return user;

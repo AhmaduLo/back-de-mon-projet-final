@@ -35,7 +35,7 @@ public class TexteService {
 		return texteRepository.findAllByOrderByIdDesc();
 	}
 	
-	//--------------------delete-----------------------------
+	// --------------------delete-----------------------------
 //	public User saveTexte(Texte texte, Long idUser) {
 //		Optional<User> userOptional = userRepository.findById(idUser);
 //		User user = null;
@@ -48,12 +48,13 @@ public class TexteService {
 //
 //		return user;
 //	}
-	//--------------------enregistrer-------------------------------
+	// --------------------enregistrer-------------------------------
 	public User saveTexte(Texte texte, Long idUser) {
 		Optional<User> userOptional = userRepository.findById(idUser);
 		User user = null;
 		if (userOptional.isPresent()) {
 			user = userOptional.get();
+			texte.setUser(user);
 			user.getTextes().add(texte);
 			return userRepository.save(user);
 
@@ -62,8 +63,8 @@ public class TexteService {
 		return user;
 	}
 	
-	/*----------update--------------------*/
-	/*----------------on transforme notre entity citation en Dto puis l'envoyer dans la bdd----------------------------------------------------*/
+	/*---------------------------------------update---------------------------------------------*/
+	/*----------------on transforme notre entity texte en Dto puis l'envoyer dans la bdd----------------------------------------------------*/
 
 	public Texte updateTexte(TexteDto texteDto) {
 		Texte texte = modelMapper.map(texteDto, Texte.class);
