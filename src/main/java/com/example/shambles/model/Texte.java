@@ -9,15 +9,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(	name = "textes")
 public class Texte {
 	
 	@ManyToOne
-	@JsonIgnoreProperties("textes")
+	//@JsonIgnoreProperties("textes")
+	@JsonIgnore
 	private User user;
 	
 	public void addUser(User user) {

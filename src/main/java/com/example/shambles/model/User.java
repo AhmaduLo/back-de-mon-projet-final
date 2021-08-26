@@ -16,6 +16,9 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	
+	private String img;
 
 	@NotBlank
 	@Size(max = 20)
@@ -34,7 +37,7 @@ public class User {
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
-	// ---------------------------------------------------------------------------
+	// -----------------------------liaison du table user et poster----------------------------------------------
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
 	Set<Poster> posters;
 
@@ -48,7 +51,7 @@ public class User {
 		this.posters = posters;
 	}
 
-	// -----------------------------------------------------------
+	// ------------------------------liaison du table user et texte-----------------------------
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
 	Set<Texte> textes;
 
@@ -59,9 +62,37 @@ public class User {
 	public void setTextes(Set<Texte> textes) {
 		this.textes = textes;
 	}
+	
+	// ------------------------------liaison du table user et photoprofil-----------------------------
+//	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
+//	Set<PhotoProfil>photoProfils;
+//	
+//	public Set<PhotoProfil> getPhotoProfil() {
+//		return photoProfils;
+//	}
+//
+//	public void setPhotoProfil(Set<PhotoProfil> photoProfil) {
+//		this.photoProfils = photoProfil;
+//	}
+	
+	
 	// ----------------------------------------------------------
+	
+	
+	
+	
+	
+	
 
 	public User() {
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public User(String username, String email, String password) {

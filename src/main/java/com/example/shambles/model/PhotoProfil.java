@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "photoProfil")
@@ -13,6 +16,12 @@ public class PhotoProfil {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String photoProfil;
+	
+	
+//	@OneToOne
+//	@JsonIgnoreProperties("photoProfils")
+//	private User user;
+	
 	
 	public Long getId() {
 		return id;

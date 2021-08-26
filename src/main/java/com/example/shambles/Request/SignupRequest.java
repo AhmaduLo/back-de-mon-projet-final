@@ -6,11 +6,28 @@ import java.util.Set;
 @Data
 public class SignupRequest {
  
+	private Long id;
     private String username;
     private String email;
+    private String img;
     private Set<String> roles = new HashSet<>();
     private String password;
 	
+    
+    
+    
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public String getUsername() {
 		return username;
 	}
