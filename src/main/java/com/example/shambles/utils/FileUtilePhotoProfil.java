@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUtilePhotoProfil {
 	
 	/*-----chemin ou on stock nos image------------*/
-	static String uploadDir = "src/main/webapp/WEB-INF/profilPhoto/";
+	static String uploadDir = "src/main/FichierPP/photoprofil/";
 	
 	public static long saveFileAndReplace(String lastFile, MultipartFile file, String newFile, Long id) throws IOException{
 		Path uploadPath = Paths.get(uploadDir+"/"+id);

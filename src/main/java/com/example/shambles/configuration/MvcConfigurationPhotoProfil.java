@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfigurationPhotoProfil  implements WebMvcConfigurer {
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		 registry.addResourceHandler("/ProfilPhoto/**").addResourceLocations("/WEB-INF/ProfilPhoto/")
+		 registry.addResourceHandler("/photoprofil/**").addResourceLocations("/FichierPP/photoprofil/")
          .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
 		
 	}
